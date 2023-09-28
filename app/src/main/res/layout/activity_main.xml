@@ -10,45 +10,46 @@
     >
 
     <EditText
+        android:id="@+id/editTextInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter a text to encrypt"
         android:layout_marginBottom="16dp"
-        />
+        android:hint="Enter a text to encrypt" />
+
     <Button
+        android:id="@+id/buttonEncrypt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/encrypt"
         android:layout_marginBottom="16dp"
-        />
+        android:text="@string/encrypt" />
+
     <TextView
+        android:id="@+id/ecryptedText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="@string/encryptText"
         android:layout_marginBottom="16dp"
-        />
+        tools:text="@string/encryptText" />
+
     <LinearLayout
+        android:id="@+id/viewError"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
+        android:orientation="horizontal">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:scrollbarTrackVertical="@color/red"
             app:srcCompat="@drawable/baseline_warning_amber_24" />
 
-            <Space
-                android:layout_width="16dp"
-                android:layout_height="match_parent"/>
+        <Space
+            android:layout_width="16dp"
+            android:layout_height="match_parent" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/encryptError"
-                android:textColor="@color/red"
-                />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/encryptError"
+            android:textColor="@color/red" />
     </LinearLayout>
 
 </LinearLayout>
