@@ -28,13 +28,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        tools:text="@string/encryptText" />
+        tools:text="@string/encryptText"
+        android:visibility="gone"
+        />
 
     <LinearLayout
         android:id="@+id/viewError"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="gone"
+        >
 
         <ImageView
             android:layout_width="wrap_content"
