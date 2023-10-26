@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:hint="Enter a text to encrypt" />
+        android:hint="@string/hintInputText" />
 
     <Button
         android:id="@+id/buttonEncrypt"
@@ -29,6 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         tools:text="@string/encryptText"
+        android:text="@string/encryptText"
         android:visibility="gone"
         />
 
@@ -50,8 +51,9 @@
             android:layout_height="match_parent" />
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:id="@+id/textError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/encryptError"
             android:textColor="@color/red" />
     </LinearLayout>
