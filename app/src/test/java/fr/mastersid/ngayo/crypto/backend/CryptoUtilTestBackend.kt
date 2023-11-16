@@ -1,8 +1,6 @@
 package fr.mastersid.ngayo.crypto.backend
 
 
-import CryptoUtilImpl
-import IllegalCharException
 import com.google.common.truth.Truth.assertThat
 import org.junit.Assert.assertThrows
 import org.junit.Test

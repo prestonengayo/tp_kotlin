@@ -1,8 +1,5 @@
-import dagger.Binds
-import dagger.Module
-import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ViewModelComponent
-import fr.mastersid.ngayo.crypto.data.CryptoUtil
+package fr.mastersid.ngayo.crypto.backend
+
 import javax.inject.Inject
 
 private const val CESAR_DEFAULT_SHIFT = 13
@@ -10,19 +7,13 @@ private val CHAR_RANGES = listOf(
     'A'..'Z', 'a'..'z'
 )
 
-@Module
-@InstallIn(ViewModelComponent::class)
-abstract  class CryptoUtilModule{
-    @Binds
-    abstract fun bindCryptoUtil(cryptoUtilImpl: CryptoUtilImpl):CryptoUtil
-}
 
 class CryptoUtilImpl @Inject constructor(): CryptoUtil {
 
     /**
      * Returns encrypted text applying the Cesar cipher on [text] text with a shift of 13; works
      * only with a-z and A-Z characters; space character is left unchanged; other characters throw
-     * IllegalCharException
+     * fr.mastersid.ngayo.crypto.backend.IllegalCharException
      * @param [text] text to encrypt with Cesar code
      * @throws IllegalCharException "Illegal character for encryption: <c>" with the first faulty
      * character <c> in [text]
