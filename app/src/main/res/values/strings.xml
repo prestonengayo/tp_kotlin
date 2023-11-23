@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">Crypto</string>
-    <string name="encrypt">ENCRYPT</string>
+    <string name="encrypt">GO TO ENCRYPTION</string>
+    <string name="encryptCrypto">ENCRYPT WITH %1$d SHIFT</string>
     <string name="encryptText">%1$s</string>
     <string name="hintInputText">Enter a text to encrypt</string>
+    <string name="hintInputTextShift">Enter encryption shift</string>
     <string name="encryptError">Character \"%1$s\" can\'t be encrypted</string>
 </resources>

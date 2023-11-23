@@ -5,57 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".views.MainActivity"
-    android:orientation="vertical"
-    android:padding="16dp"
     >
 
-    <EditText
-        android:id="@+id/editTextInput"
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentShift"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:hint="@string/hintInputText" />
-
-    <Button
-        android:id="@+id/buttonEncrypt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="@string/encrypt" />
-
-    <TextView
-        android:id="@+id/ecryptedText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        tools:text="@string/encryptText"
-        android:text="@string/encryptText"
-        android:visibility="gone"
+        android:layout_height="match_parent"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/nav_graph"
         />
-
-    <LinearLayout
-        android:id="@+id/viewError"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:visibility="gone"
-        >
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@drawable/baseline_warning_amber_24" />
-
-        <Space
-            android:layout_width="16dp"
-            android:layout_height="match_parent" />
-
-        <TextView
-            android:id="@+id/textError"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/encryptError"
-            android:textColor="@color/red" />
-    </LinearLayout>
-
 </LinearLayout>

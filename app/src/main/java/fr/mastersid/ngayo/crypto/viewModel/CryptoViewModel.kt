@@ -20,9 +20,9 @@ class CryptoViewModel @Inject constructor (
         STATE_KEY_RESULT , EncryptionResult.Empty)
     val encryptionResult : LiveData<EncryptionResult> = _encryptionResult
 
-    fun encrypt(text: String){
+    fun encrypt(text: String, shift: Int){
         try {
-            this._encryptionResult.value = EncryptionResult.Encrypted(this.cryptoUtil.cesar(text))
+            this._encryptionResult.value = EncryptionResult.Encrypted(this.cryptoUtil.encrypt(text,shift))
         }catch (e: IllegalCharException){
             this._encryptionResult.value = EncryptionResult.Failed(e.message.last())
         }

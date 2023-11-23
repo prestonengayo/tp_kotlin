@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/shiftFragment">
+
+    <fragment
+        android:id="@+id/shiftFragment"
+        android:name="fr.mastersid.ngayo.crypto.views.ShiftFragment"
+        android:label="ShiftFragment"
+        tools:layout="@layout/fragment_shift"
+        >
+
+        <action
+            android:id="@+id/action_shiftFragment_to_cryptoFragment"
+            app:destination="@id/cryptoFragment" />
+        <argument
+            android:name="shiftNumber"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/cryptoFragment"
+        android:name="fr.mastersid.ngayo.crypto.views.CryptoFragment"
+        android:label="CryptoFragment"
+        tools:layout="@layout/fragment_crypto"
+        />
+</navigation>

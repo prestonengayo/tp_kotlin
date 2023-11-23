@@ -22,7 +22,7 @@ class CryptoUtilImpl @Inject constructor(): CryptoUtil {
         return encrypt(text, CESAR_DEFAULT_SHIFT)
     }
 
-        private fun encrypt(text: String, shift: Int): String {
+        fun encrypt(text: String, shift: Int): String {
         return text.map { c ->
             if (c == ' ') {
                 c
