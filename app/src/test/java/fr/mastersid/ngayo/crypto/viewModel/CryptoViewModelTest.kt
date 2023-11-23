@@ -42,10 +42,10 @@ class CryptoViewModelTest{
         }
     }
 
-   /* @Test
+   @Test
     fun `Verification that CryptoViewModel responds correctly when the encrypt() method is called test encrypt method with Hello world!`(){
         val savedStateHandle = SavedStateHandle()
-        Mockito.`when`(cryptoUtilFake.cesar("Hello world!")).thenThrow( IllegalCharException("illegal exception"))
+        Mockito.`when`(cryptoUtilFake.cesar("Hello world!")).thenThrow(IllegalCharException("!"))
         val cryptoViewModel = CryptoViewModel(savedStateHandle,cryptoUtilFake)
         cryptoViewModel.encrypt("Hello world!")
 
@@ -54,25 +54,8 @@ class CryptoViewModelTest{
         cryptoViewModel.encryptionResult.observeForever{ value ->
             assertThat(value).isEqualTo(EncryptionResult.Failed(FAKE_RESULT_SECOND))
         }
-    }*/
-
-    @Test
-    fun `Verification that CryptoViewModel responds correctly when the encrypt() method is called test encrypt method with Hello world!`(){
-        val savedStateHandle = SavedStateHandle()
-
-        Mockito.doAnswer {
-            throw IllegalCharException("illegal exception")
-        }.`when`(cryptoUtilFake).cesar("Hello world!")
-
-        val cryptoViewModel = CryptoViewModel(savedStateHandle, cryptoUtilFake)
-        cryptoViewModel.encrypt("Hello world!")
-
-        Mockito.verify(cryptoUtilFake, Mockito.times(1)).cesar("Hello world!")
-
-        cryptoViewModel.encryptionResult.observeForever { value ->
-            assertThat(value).isEqualTo(EncryptionResult.Failed(FAKE_RESULT_SECOND))
-        }
     }
+
 
 
 }
