@@ -15,6 +15,7 @@
         <action
             android:id="@+id/action_shiftFragment_to_cryptoFragment"
             app:destination="@id/cryptoFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/cryptoFragment"
