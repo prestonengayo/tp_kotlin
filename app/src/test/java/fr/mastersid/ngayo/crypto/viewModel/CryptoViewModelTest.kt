@@ -17,7 +17,7 @@ import org.mockito.junit.MockitoJUnitRunner
 
 private const val FAKE_RESULT_FIRST = "Uryyb jbeyq"
 private const val FAKE_RESULT_SECOND = '!'
-
+private const val CESAR_DEFAULT_SHIFT = 13
 
 @RunWith(MockitoJUnitRunner::class )
 class CryptoViewModelTest{
@@ -31,11 +31,11 @@ class CryptoViewModelTest{
     @Test
     fun `Verification that CryptoViewModel responds correctly when the encrypt() method is called test encrypt method with Hello world`(){
         val savedStateHandle = SavedStateHandle()
-        Mockito.`when`(cryptoUtilFake.cesar("Hello world")).thenReturn(FAKE_RESULT_FIRST)
+        Mockito.`when`(cryptoUtilFake.encrypt("Hello world", CESAR_DEFAULT_SHIFT)).thenReturn(FAKE_RESULT_FIRST)
         val cryptoViewModel = CryptoViewModel(savedStateHandle,cryptoUtilFake)
-        cryptoViewModel.encrypt("Hello world")
+        cryptoViewModel.encrypt("Hello world", CESAR_DEFAULT_SHIFT)
 
-        Mockito.verify(cryptoUtilFake, Mockito.times(1)).cesar("Hello world")
+        Mockito.verify(cryptoUtilFake, Mockito.times(1)).encrypt("Hello world", CESAR_DEFAULT_SHIFT)
 
         cryptoViewModel.encryptionResult.observeForever{ value ->
             assertThat(value).isEqualTo(EncryptionResult.Encrypted(FAKE_RESULT_FIRST))
@@ -45,11 +45,11 @@ class CryptoViewModelTest{
    @Test
     fun `Verification that CryptoViewModel responds correctly when the encrypt() method is called test encrypt method with Hello world!`(){
         val savedStateHandle = SavedStateHandle()
-        Mockito.`when`(cryptoUtilFake.cesar("Hello world!")).thenThrow(IllegalCharException("!"))
+        Mockito.`when`(cryptoUtilFake.encrypt("Hello world!", CESAR_DEFAULT_SHIFT)).thenThrow(IllegalCharException("!"))
         val cryptoViewModel = CryptoViewModel(savedStateHandle,cryptoUtilFake)
-        cryptoViewModel.encrypt("Hello world!")
+        cryptoViewModel.encrypt("Hello world!", CESAR_DEFAULT_SHIFT)
 
-        Mockito.verify(cryptoUtilFake, Mockito.times(1)).cesar("Hello world!")
+        Mockito.verify(cryptoUtilFake, Mockito.times(1)).encrypt("Hello world!", CESAR_DEFAULT_SHIFT)
 
         cryptoViewModel.encryptionResult.observeForever{ value ->
             assertThat(value).isEqualTo(EncryptionResult.Failed(FAKE_RESULT_SECOND))

@@ -30,7 +30,7 @@ class CryptoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val cryptoViewModel: CryptoViewModel by viewModels()
 
-        val args : ShiftFragmentArgs by navArgs()
+        val args : CryptoFragmentArgs by navArgs()
         val shiftNumber = args.shiftNumber
 
         val encryptedText = binding.ecryptedText

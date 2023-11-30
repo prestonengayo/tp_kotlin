@@ -11,12 +11,17 @@ import fr.mastersid.ngayo.crypto.R
 
 
 import org.junit.Test
-
 @MediumTest
 class MainActivityTest{
     @Test
     fun verify_that_when_the_user_enters_Hello_world_in_the_text_field_the_text_Uryyb_jbeyq_is_displayed(){
         launchActivity<MainActivity>()
+        onView(withId(R.id.editTextInputShift)).perform(typeText("13"))
+        Thread.sleep(2000)
+
+        onView(withId(R.id.buttonEncryptShift)).perform(click())
+        Thread.sleep(2000)
+
         onView(withId(R.id.editTextInput)).perform(typeText("Hello world"))
         Thread.sleep(2000)
 
